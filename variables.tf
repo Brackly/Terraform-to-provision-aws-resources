@@ -5,7 +5,6 @@ variable "cidr_block" {
   default     = "10.0.0.0/16"
 }
 
-
 variable "instance_tenancy" {
   type        = string
   description = "IP range for the vpc"
@@ -27,6 +26,12 @@ variable "subnet_cidr_block_1" {
   default     = "10.0.1.0/24"
 }
 
+
+variable "subnet_cidr_block_2" {
+  type        = string
+  description = "IP range for public subnet 1"
+  default     = "10.0.32.0/24"
+}
 variable "availability_zone_1" {
   type        = string
   description = "IP range for public subnet 1"
@@ -36,7 +41,7 @@ variable "availability_zone_1" {
 variable "map_public_ip_on_launch" {
   type        = bool
   description = "IP range for the vpc"
-  default     = true
+  default     = false
 }
 
 variable "public_destination_cidr_block" {
