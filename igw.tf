@@ -1,11 +1,11 @@
-resource "aws_internet_gateway" "terraform_igw" {
+resource "aws_internet_gateway" "Terraform_igw" {
   vpc_id = aws_vpc.Terraform_provisioned_vpc.id
-  cidr_block= "10.0.0.0/19"
-  availability_zone= "us-east-2a"
-
   tags = {
-    Name = "terraform_igw"
-    "kubernetes.io/role/elb"= "1"
-    "kubernetes.io/cluster/demo"= "owned"
+    Name = "${aws_vpc.Terraform_provisioned_vpc.tags.Name} internet gateway"
   }
 }
+
+# resource "aws_internet_gateway_attachment" "example" {
+#   internet_gateway_id = aws_internet_gateway.Terraform_igw.id
+#   vpc_id              = aws_vpc.Terraform_provisioned_vpc.id
+# }
