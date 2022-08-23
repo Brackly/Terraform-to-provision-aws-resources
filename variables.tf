@@ -42,5 +42,5 @@ variable "map_public_ip_on_launch" {
 variable "public_destination_cidr_block" {
   type        = string
   description = "gateway Routing destination for instances in public subnets "
-  default     = "0.0.0.0/0" 
+  default     = "0.0.0.0/0"
 }
