@@ -35,7 +35,7 @@ variable "subnet_cidr_block_2" {
 variable "availability_zone_1" {
   type        = string
   description = "IP range for public subnet 1"
-  default     = "us-east-1a "
+  default     = "us-east-1a"
 }
 
 variable "map_public_ip_on_launch" {
