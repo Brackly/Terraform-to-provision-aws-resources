@@ -14,8 +14,13 @@ resource "aws_route" "public_route" {
 }
 
 
-resource "aws_route_table_association" "Terraform_public_rt_assoc" {
+resource "aws_route_table_association" "Terraform_public_rt_assoc_us_east_1a" {
   subnet_id      = aws_subnet.public_subnet_1.id
+  route_table_id = aws_route_table.Terraform_Public_route_table.id
+}
+
+resource "aws_route_table_association" "Terraform_public_rt_assoc_us_east_1b" {
+  subnet_id      = aws_subnet.public_subnet_2.id
   route_table_id = aws_route_table.Terraform_Public_route_table.id
 }
 
@@ -36,5 +41,10 @@ resource "aws_route" "private_route" {
 
 resource "aws_route_table_association" "Terraform_private_rt_assoc" {
   subnet_id      = aws_subnet.private_subnet_1.id
+  route_table_id = aws_route_table.Terraform_Private_route_table.id
+}
+
+resource "aws_route_table_association" "Terraform_private_rt_assoc_us_east_1b" {
+  subnet_id      = aws_subnet.private_subnet_2.id
   route_table_id = aws_route_table.Terraform_Private_route_table.id
 }
