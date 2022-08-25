@@ -1,0 +1,10 @@
+deployment:
+  name: nginx
+  image: nginx:1.14.2
+  port: 80
+
+service:
+  name: 
+    internal:  nginx-service
+    external:  nginx-service-external
+  type: LoadBalancer
